@@ -13,10 +13,23 @@ package sheepcounting;
 public class SheepCounting {
 
     /**
-     * @param args the command line arguments
+     * @return sheeps
      */
     public int liczenieOwieczek(){
-        boolean[] tab = {true, false, true, true, false, true, false, true, false, false}; //5 owieczek
+        boolean[] tab = {true, false, true, true, false, true, false, true, false, true}; //5 owieczek
+        int rozmiar= tab.length;
+        int sheeps= 0;
+        
+        for (int i = 0; i < rozmiar; i++) {
+            if(tab[i]==true){
+                sheeps++;
+            }
+        }
+        return sheeps;
+    }
+    
+    public int liczenieOwieczek(boolean[] tab){
+        //boolean[] tab = {true, false, true, true, false, true, false, true, false, true}; //5 owieczek
         int rozmiar= tab.length;
         int sheeps= 0;
         
@@ -31,6 +44,8 @@ public class SheepCounting {
     public static void main(String[] args) {
         SheepCounting liczenie = new SheepCounting();
         System.out.println(liczenie.liczenieOwieczek());
+        boolean[] tablica= {true,true,true,false,false};
+        System.out.println(liczenie.liczenieOwieczek(tablica));
     }
     
 }
